@@ -1,22 +1,29 @@
-import api from './src/services/api';
+const axios = require('axios');
 
+const api = axios.create({
+    baseURL: 'https://api.sicoob.com.br/cobranca-bancaria/v2'
+});
+
+// integer // obrigatório // número que identifica o contrato do beneficiário no Sisbr.
 const numeroContrato = 000000;
+
+// integer // obrigatório // identifica a modalidade do boleto.
 const modalidade = 1;
-const nossoNumero = '';
-const linhaDigitavel = '';
-const codigoBarras = '00190500954014481606906809350314337370000000100';
 
-const clientid = 'dsfsd1f85sdf185dsf10s25df4';
-const token = 'aasdsadsad1asdsadsad1asd1sa2d5sad4sad1sa2d5';
+// integer // número identificador do boleto no Sisbr. Caso seja infomado, não é necessário infomar a linha digitável ou código de barras.
+const nossoNumero = null;
 
-// const dados = {
-//     "x-sicoob-clientid": "",
-//     numeroContrato: 000,
-//     modalidade: 1,
-//     nossoNumero: '',
-//     linhaDigitavel: '',
-//     codigoBarras: ''
-// };
+// string // número da linha digitável do boleto com 47 posições. Caso seja informado, não é necessário informar o nosso número ou código de barras.
+const linhaDigitavel = '11111111111111111111111111111111111111111111111';
+
+// string // número de código de barras do boleto com 44 posições.Caso seja informado, não é necessário informar o nosso número ou linha digitável.
+const codigoBarras = '';
+
+// string // obrigatório
+const clientid = 'asdf123asdf123asdf123asdf123asdf123';
+
+// string // obrigatório
+const token = 'qwer456qwer456qwer456qwer456qwer456qwer456qwer456';
 
 async function consultarBoleto() {
     try {
