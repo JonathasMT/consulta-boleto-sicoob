@@ -43,9 +43,19 @@ async function consultarBoleto() {
                 codigoBarras: codigoBarras
             }
         });
-        console.log(resposta);
+
+        try {
+            console.log(resposta.response.data);
+        } catch (err) {
+           console.log(resposta);
+
+        }
       } catch (erro) {
-        console.error(erro);
+        try {
+            console.log(erro.response.data);
+        } catch (error) {
+           console.erro(erro);
+        }
       }
 };
 
