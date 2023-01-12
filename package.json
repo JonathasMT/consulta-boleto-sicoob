@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "index.js"
   },
-  "author": "Joanatas Rodrigues Martins",
-  "license": "ISC",
+  "author": "Joanatas Martins",
+  "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
     "axios": "^1.2.2"
   }
